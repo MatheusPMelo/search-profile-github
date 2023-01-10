@@ -67,3 +67,8 @@ export const RowCenter = styled.div`
         flex-direction: column;
     }
 `;
+
+export const ContainerBody = styled.section`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+`

@@ -4,9 +4,8 @@ import { ThemeProvider } from 'styled-components';
 //styles
 import theme from './styles/theme';
 import Global from './styles/global';
+import Main from './components/main';
 
-//Components
-import SearchEngine from './components/searchEngine';
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
 
         <Global />
 
-        <SearchEngine />
+        <Main />
 
       </ThemeProvider>
     </div>
