@@ -1,11 +1,12 @@
 import React, { useState, FC } from 'react';
-import { ContainerContent, ContainerDetail, ContainerInput, ContainerMain, ContainerRepositories } from './style';
+import { ContainerContent, ContainerDetail, ContainerInput, ContainerMain } from './style';
 import api from '../../services/api/api';
 import { FaSearch } from 'react-icons/fa'
 import { AiFillDatabase } from "react-icons/ai";
 
 
 import mascot from '../../assets/githubMascot.png'
+import Repositories from '../repositories';
 
 interface ISearch {
     name: string;
@@ -106,20 +107,10 @@ const Details: FC<IDetails> = ({
         )}
     </ContainerDetail>
 )
-
 interface IRepositories {
     name: string;
     html_url: string;
 }
-
-const Respository: FC<IRepositories> = ({
-    name,
-    html_url,
-}) => (
-    <a href={html_url} className="repository">
-        <h4>{name}</h4>
-    </a>
-)
 
 const Main: React.FC = () => {
     const [search, setSearch] = useState("")
@@ -132,7 +123,7 @@ const Main: React.FC = () => {
     const [twitter, setTwitter] = useState("Twitter")
     const [url, setUrl] = useState("url")
     const [publicRepos, setPublicRepos] = useState("Repositories")
-    const [respositories, setRespositories] = useState<IRepositories[]>([])
+    const [repositories, setrepositories] = useState<IRepositories[]>([])
 
 
     const handlesearch = () => {
@@ -152,8 +143,8 @@ const Main: React.FC = () => {
             })
 
         api.get(`users/${search}/repos`).then((res) => {
-            setRespositories(res.data)
-            console.log(respositories)
+            setrepositories(res.data)
+            console.log(repositories)
         })
     }
 
@@ -192,14 +183,9 @@ const Main: React.FC = () => {
                 </div>
             </ContainerContent>
 
-            <ContainerRepositories>
-                {respositories.map((repo) => (
-                    <Respository
-                        name={repo.name}
-                        html_url={repo.html_url}
-                    />
-                ))}
-            </ContainerRepositories>
+            <Repositories 
+                repositories = {repositories}
+            />
         </ContainerMain>
     )
 }
