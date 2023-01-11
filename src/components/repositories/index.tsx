@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { ContainerRepositories, MainContainerRepositories } from './style'
 
 const Repositories: React.FC<any> = ({
