@@ -48,7 +48,13 @@ export const ContainerContent = styled.div`
     padding-top: 4rem;
     gap: 4rem;
 
+    @media(max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 
+    @media (min-width: 600px) and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
 
     .content-image{
         img{
@@ -71,6 +77,13 @@ export const ContainerDetail = styled.div`
     justify-content: center;
     align-items: start;
     flex-direction: column;
+    flex-wrap: wrap;
+
+    @media (min-width: 600px) and (max-width: 1024px){
+        height: 180px;
+        width: 100%;
+        gap: 1rem;
+    }
 
     > div {
         padding: .5rem 0;
