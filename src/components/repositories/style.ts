@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const MainContainerRepositories = styled.div`
+    margin-top: 3rem;
+    width: 100%;
+`
+
 export const ContainerRepositories = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -21,5 +26,21 @@ export const ContainerRepositories = styled.section`
             opacity: .5;
         }
         
+    }
+
+    button {
+        background: ${props => props.theme.colors.background};
+        color: ${props => props.theme.colors.text};
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.1);
+            background: ${props => props.theme.colors.secondary};
+        }
     }
 `

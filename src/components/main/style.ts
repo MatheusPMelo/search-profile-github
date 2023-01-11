@@ -52,7 +52,7 @@ export const ContainerContent = styled.div`
         grid-template-columns: 1fr;
     }
 
-    @media(min-width: 600px) {
+    @media (min-width: 600px) and (max-width: 1024px) {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -79,7 +79,7 @@ export const ContainerDetail = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
 
-    @media(min-width: 600px) {
+    @media (min-width: 600px) and (max-width: 1024px){
         height: 180px;
         width: 100%;
         gap: 1rem;
